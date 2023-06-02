@@ -5,11 +5,11 @@ public class Card {
     public String name;
     public boolean isdealt;
 
-    public Card(int pSuit, int pName){
+    public Card(int pName, int pSuit){
         if (pSuit == 0) {
             suit = "Diamonds";
         }
-        if(pSuit ==1){
+        if(pSuit == 1){
             suit = "Spades";
         }
         if(pSuit == 2){
@@ -32,7 +32,8 @@ public class Card {
         }
         if(pName == 4){
             name = "five";
-        }if(pName == 5){
+        }
+        if(pName == 5){
             name = "six";
         }
         if(pName == 6){
@@ -56,8 +57,9 @@ public class Card {
         if(pName == 12){
             name = "king";
         }
-
-
-
+        System.out.println("You made the " + name + " of " + suit);
+    }
+    public void print(){
+        System.out.println("This is the " + name + " of " + suit);
     }
 }
