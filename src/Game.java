@@ -17,16 +17,26 @@ public class Game {
         for (int w = 0; w < 4; w++) {
             for (int x = 0; x < 13; x++) {
                 deck[count] = new Card(x, w);
+                //deck[count].printcard();
                 count++;
             }
         }
+        shuffle();
+    }
+    public void shuffle(){
+        Card[] shuffledeck = new Card[52];
+        for(int f=0; f< shuffledeck.length; f++){
+            int randomcard = (int)(Math.random()*52);
+            Card shufflecard = deck[randomcard];
 
-
-//        card1 = new Card(1,1);
-//        card1.print();
-//        card2 = new Card(2,1);
-//        card2.print();
-
-
+            while (deck[randomcard].isdealt == true){
+                randomcard = (int)(Math.random()*52);
+                shufflecard = deck[randomcard];
+            }
+            deck[randomcard].isdealt = true;
+            shufflecard.printcard();
+            shuffledeck[f] = shufflecard;
+        }
+        deck = shuffledeck;
     }
 }
